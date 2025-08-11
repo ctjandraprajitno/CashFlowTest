@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inria Sans", Arial, sans-serif;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #274e68;
+}
+
+header {
+  margin: 0;
+  padding: 0.5em;
+  background-color: #e5f6df;
+  border-style: solid;
+  border-color: #aac6a0;
+  border-width: 0;
+  border-bottom-width: 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+#filter {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+h1,
+h2 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0.2em;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+
+button, input {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+h1 {
+  font-size: 24px;
+  color: #22c423;
+}
+
+h2 {
+  font-size: 20px;
+  color: #274e68;
+}
+
+#month-filter {
+  margin: auto;
+  padding: 10px;
+  font-size: 20px;
+  height: 1.2em;
+  background-color: #ffffff;
+  border: 1px solid #aac6a0;
+  border-radius: 20px;
+}
+
+#tabNav {
+  padding: 10px;
+  margin: auto;
+  font-size: 20px;
+  height: 1.2em;
+  display: flex;
+  gap: 10px;
+  background-color: #ffffff;
+  border: 1px solid #aac6a0;
+  border-radius: 20px;
+  justify-content: space-between;
+}
+
+#line {
+  width: 2px;
+  height: 100%;
+  background-color: #aac6a0;
+}
+
+.card {
+  padding: 20px;
+  margin: 10px;
+  background-color: #ffffff;
+  border: 1px solid #aac6a0;
+  border-radius: 20px;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#summaryCards {  
+  display: grid;
+  grid-template-areas:
+    "netWorth expense-breakdown"
+    "expense-summary expense-breakdown"
+    "expenses-over-time";
+}
+
+#netWorth {
+  grid-area: netWorth;
+}
+#expense-summary {
+  grid-area: expense-summary;
+}
+#expense-breakdown {
+  grid-area: expense-breakdown;
+}
+#income-breakdown {
+  grid-area: income-breakdown;
+}
+#expenses-over-time {
+  grid-area: expenses-over-time;
+}
+#goal-tracker {
+  grid-area: goal-tracker;
+}
+
+/* Chat Bot Section */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #555;
+}
+
+#user-input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.3s ease;
+}
+
+#user-input:focus {
+  outline: none;
+  border-color: #aac6a0;
+  box-shadow: 0 0 0 3px #aac6a0;
+}
+
+#send-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #aac6a0 0%, #93c182 100%);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+#send-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+#send-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.response-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f0f0f0;
+}
+
+#ai-response {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 100px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+.placeholder {
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+
+.example-questions {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e7f3ff;
+  border-radius: 8px;
+}
+
+.example-questions h3 {
+  margin-bottom: 10px;
+  color: #aac6a0;
+  font-size: 1.1em;
+}
+
+.example-btn {
+  background: #aac6a0;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.example-btn:hover {
+  background: #aac6a0;
+}
