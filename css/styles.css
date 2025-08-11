@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
   padding: 0;
@@ -15,8 +19,11 @@ header {
   border-color: #aac6a0;
   border-width: 0;
   border-bottom-width: 1px;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(515px, 1fr));
 }
 
 #filter {
@@ -39,7 +46,8 @@ a {
   font: inherit;
 }
 
-button, input {
+button,
+input {
   border: none;
   background: none;
   cursor: pointer;
@@ -57,8 +65,8 @@ h2 {
 }
 
 #month-filter {
-  margin: auto;
   padding: 10px;
+  margin: auto;
   font-size: 20px;
   height: 1.2em;
   background-color: #ffffff;
@@ -76,7 +84,6 @@ h2 {
   background-color: #ffffff;
   border: 1px solid #aac6a0;
   border-radius: 20px;
-  justify-content: space-between;
 }
 
 #line {
@@ -93,18 +100,18 @@ h2 {
   border-radius: 20px;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-#summaryCards {  
-  display: grid;
+#summaryCards {
+  /* display: grid;
   grid-template-areas:
     "netWorth expense-breakdown"
     "expense-summary expense-breakdown"
-    "expenses-over-time";
+    "expenses-over-time"; */
 }
 
 #netWorth {

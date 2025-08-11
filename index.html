@@ -7,87 +7,86 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-      <header>
-        <h1>Financial Overview</h1>
-        <div id="filter">
+    <header>
+      <h1>Financial Overview</h1>
+      <div id="filter">
         <input type="month" id="month-filter" name="month-filter" />
         <nav id="tabNav">
           <a href="index.html" onclick="showPage('dashboard')">Dashboard</a>
           <div id="line"></div>
           <a href="sheet.html" onclick="showPage('spreadsheet')">Spreadsheet</a>
         </nav>
-        </div>
-      </header>
+      </div>
+    </header>
 
-      <main>
-
-        <div id="summaryCards">
-          <div class="card" id="netWorth">
-            <h2>Net Worth Overview</h2>
-            <p class="text" id="netWorth">$7,335.84</p>
-            <!--change to proper net worth calculation (no need to include investment for now or can get investment from investment spending category)-->
-          </div>
-
-          <div class="card" id="expense-summary">
-            <h2>Expense Summary</h2>
-            <p class="total-expense">$819.07</p>
-            <!--change to proper expense calculation(income vs expense then net revenue) and show pie chart; if clicked, it should change the breakdown. e.g. expenses is clicked -> show expenses breakdown and if income is clicked -> show income breakdown-->
-          </div>
-
-          <div class="card" id="expense-breakdown">
-            <h2>Expenses Breakdown</h2>
-            <div class="expense-category">Mortgage</div>
-            <div class="expense-category">Transportation</div>
-            <div class="expense-category">Food</div>
-            <div class="expense-category">Entertainment</div>
-            <div class="expense-category">Shopping</div>
-            <div class="expense-category">Education</div>
-            <div class="expense-category">Miscellaneous</div>
-          </div>
-          <div class="card" id="income-breakdown">
-            <h2>Income Breakdown</h2>
-            <div class="income-category">Salary</div>
-            <div class="income-category">Investments</div>
-            <div class="income-category">Side Hustle</div>
-            <div class="income-category">Other Income</div>
-          </div>
-
-          <div class="card" id="expenses-over-time">
-            <h2>Expenses Over Time</h2>
-            <canvas id="lineChart"></canvas>
-          </div>
+    <main>
+      <div id="summaryCards">
+        <div class="card" id="netWorth">
+          <h2>Net Worth Overview</h2>
+          <p class="text" id="netWorth">$7,335.84</p>
+          <!--change to proper net worth calculation (no need to include investment for now or can get investment from investment spending category)-->
         </div>
 
-        <div id="2ndColumn">
-          <div class="card" id="goal-tracker">
-            <h2>Monthly Goal</h2>
-            <canvas id="goalChart"></canvas
-            ><!-- change it to proper one like wireframe; this will show the monthly goal progress, e.g. savings goal or expense limit -->
-          </div>
+        <div class="card" id="expense-summary">
+          <h2>Expense Summary</h2>
+          <p class="total-expense">$819.07</p>
+          <!--change to proper expense calculation(income vs expense then net revenue) and show pie chart; if clicked, it should change the breakdown. e.g. expenses is clicked -> show expenses breakdown and if income is clicked -> show income breakdown-->
+        </div>
 
-          <div class="input-section">
-            <label for="user-input">Ask ChatGPT anything:</label>
-            <textarea
-              id="user-input"
-              placeholder="Type your question here... For example: 'Explain quantum physics in simple terms' or 'Write a short poem about coding'"
-            ></textarea>
+        <div class="card" id="expense-breakdown">
+          <h2>Expenses Breakdown</h2>
+          <div class="expense-category">Mortgage</div>
+          <div class="expense-category">Transportation</div>
+          <div class="expense-category">Food</div>
+          <div class="expense-category">Entertainment</div>
+          <div class="expense-category">Shopping</div>
+          <div class="expense-category">Education</div>
+          <div class="expense-category">Miscellaneous</div>
+        </div>
+        <div class="card" id="income-breakdown">
+          <h2>Income Breakdown</h2>
+          <div class="income-category">Salary</div>
+          <div class="income-category">Investments</div>
+          <div class="income-category">Side Hustle</div>
+          <div class="income-category">Other Income</div>
+        </div>
 
-            <button id="send-btn" onclick="sendToChatGPT()">
-              Send to ChatGPT
-            </button>
-          </div>
+        <div class="card" id="expenses-over-time">
+          <h2>Expenses Over Time</h2>
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
 
-          <!-- Response Section -->
-          <div class="response-section">
-            <label>ChatGPT Response:</label>
-            <div id="ai-response">
-              <div class="placeholder">
-                Your AI response will appear here after you send a message...
-              </div>
+      <div id="2ndColumn">
+        <div class="card" id="goal-tracker">
+          <h2>Monthly Goal</h2>
+          <canvas id="goalChart"></canvas
+          ><!-- change it to proper one like wireframe; this will show the monthly goal progress, e.g. savings goal or expense limit -->
+        </div>
+
+        <div class="input-section">
+          <label for="user-input">Ask ChatGPT anything:</label>
+          <textarea
+            id="user-input"
+            placeholder="Type your question here... For example: 'Explain quantum physics in simple terms' or 'Write a short poem about coding'"
+          ></textarea>
+
+          <button id="send-btn" onclick="sendToChatGPT()">
+            Send to ChatGPT
+          </button>
+        </div>
+
+        <!-- Response Section -->
+        <div class="response-section">
+          <label>ChatGPT Response:</label>
+          <div id="ai-response">
+            <div class="placeholder">
+              Your AI response will appear here after you send a message...
             </div>
           </div>
         </div>
-      </main>
+      </div>
+    </main>
 
     <script src="js/api.js"></script>
   </body>
