@@ -19,8 +19,6 @@ header {
   border-color: #aac6a0;
   border-width: 0;
   border-bottom-width: 1px;
-  /* display: flex;
-  flex-direction: column; */
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(515px, 1fr));
@@ -107,18 +105,15 @@ main {
 }
 
 #summaryCards {
-  /* display: grid;
+  display: grid;
   grid-template-areas:
-    "netWorth expense-breakdown"
-    "expense-summary expense-breakdown"
-    "expenses-over-time"; */
+    "netWorth expense-breakdown income-breakdown"
+    "expense-summary expense-breakdown income-breakdown"
+    "expenses-over-time expenses-over-time monthly-goal";
 }
 
 #netWorth {
   grid-area: netWorth;
-}
-#expense-summary {
-  grid-area: expense-summary;
 }
 #expense-breakdown {
   grid-area: expense-breakdown;
@@ -129,8 +124,8 @@ main {
 #expenses-over-time {
   grid-area: expenses-over-time;
 }
-#goal-tracker {
-  grid-area: goal-tracker;
+#monthly-goal {
+  grid-area: monthly-goal;
 }
 
 /* Chat Bot Section */
@@ -165,7 +160,7 @@ label {
   border: none;
   padding: 15px;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -216,33 +211,4 @@ label {
   color: #999;
   text-align: center;
   font-style: italic;
-}
-
-.example-questions {
-  margin-top: 20px;
-  padding: 15px;
-  background: #e7f3ff;
-  border-radius: 8px;
-}
-
-.example-questions h3 {
-  margin-bottom: 10px;
-  color: #aac6a0;
-  font-size: 1.1em;
-}
-
-.example-btn {
-  background: #aac6a0;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  margin: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.3s ease;
-}
-
-.example-btn:hover {
-  background: #aac6a0;
 }

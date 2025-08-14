@@ -55,34 +55,31 @@
           <h2>Expenses Over Time</h2>
           <canvas id="lineChart"></canvas>
         </div>
-      </div>
 
-      <div id="2ndColumn">
-        <div class="card" id="goal-tracker">
+        <div class="card" id="monthly-goal">
           <h2>Monthly Goal</h2>
           <canvas id="goalChart"></canvas
           ><!-- change it to proper one like wireframe; this will show the monthly goal progress, e.g. savings goal or expense limit -->
         </div>
+      </div>
+      
+      <!-- Chatbot Section -->
+      <div class="input-section">
+        <label for="user-input">Ask ChatGPT anything:</label>
+        <textarea
+          id="user-input"
+          placeholder="Type your question here..."
+        ></textarea>
 
-        <div class="input-section">
-          <label for="user-input">Ask ChatGPT anything:</label>
-          <textarea
-            id="user-input"
-            placeholder="Type your question here... For example: 'Explain quantum physics in simple terms' or 'Write a short poem about coding'"
-          ></textarea>
+        <button id="send-btn" onclick="sendToChatGPT()">Send to ChatGPT</button>
+      </div>
 
-          <button id="send-btn" onclick="sendToChatGPT()">
-            Send to ChatGPT
-          </button>
-        </div>
-
-        <!-- Response Section -->
-        <div class="response-section">
-          <label>ChatGPT Response:</label>
-          <div id="ai-response">
-            <div class="placeholder">
-              Your AI response will appear here after you send a message...
-            </div>
+      <!-- Response Section -->
+      <div class="response-section">
+        <label>ChatGPT Response:</label>
+        <div id="ai-response">
+          <div class="placeholder">
+            Your AI response will appear here after you send a message...
           </div>
         </div>
       </div>
