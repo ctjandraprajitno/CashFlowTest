@@ -22,6 +22,9 @@ header {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(515px, 1fr));
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 #filter {
@@ -31,7 +34,9 @@ header {
 }
 
 h1,
-h2 {
+h2,
+h3,
+p {
   font-size: inherit;
   font-weight: inherit;
   margin: 0.2em;
@@ -59,6 +64,11 @@ h1 {
 
 h2 {
   font-size: 20px;
+  color: #274e68;
+}
+
+h3 {
+  font-size: 18px;
   color: #274e68;
 }
 
@@ -91,6 +101,7 @@ h2 {
 }
 
 .card {
+  max-height: 12em;
   padding: 20px;
   margin: 10px;
   background-color: #ffffff;
@@ -107,15 +118,37 @@ main {
 #summaryCards {
   display: grid;
   grid-template-areas:
-    "netWorth expense-breakdown income-breakdown"
-    "expense-summary expense-breakdown income-breakdown"
+    "netWorth expense-breakdown expense-breakdown"
+    "expense-summary expense-breakdown expense-breakdown"
     "expenses-over-time expenses-over-time monthly-goal";
+}
+
+.card-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  margin-bottom: 10px;
+  background-color: #ffffff;;
+}
+
+img {
+  max-width: 2em;
+  height: auto;
+}
+
+.expense-category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 #netWorth {
   grid-area: netWorth;
 }
 #expense-breakdown {
+  overflow-y: scroll;
   grid-area: expense-breakdown;
 }
 #income-breakdown {

@@ -1,90 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CashFlow</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Financial Overview</h1>
-      <div id="filter">
-        <input type="month" id="month-filter" name="month-filter" />
-        <nav id="tabNav">
-          <a href="index.html" onclick="showPage('dashboard')">Dashboard</a>
-          <div id="line"></div>
-          <a href="sheet.html" onclick="showPage('spreadsheet')">Spreadsheet</a>
-        </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CashFlow</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Financial Overview</h1>
+    <div id="filter">
+      <input type="month" id="month-filter" name="month-filter" />
+      <nav id="tabNav">
+        <a href="index.html" onclick="showPage('dashboard')">Dashboard</a>
+        <div id="line"></div>
+        <a href="sheet.html" onclick="showPage('spreadsheet')">Spreadsheet</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div id="summaryCards">
+      <div class="card" id="netWorth">
+        <h2>Net Worth Overview</h2>
+        <p class="text" id="netWorth">$7,335.84</p>
+        <!--change to proper net worth calculation (no need to include investment for now or can get investment from investment spending category)-->
       </div>
-    </header>
 
-    <main>
-      <div id="summaryCards">
-        <div class="card" id="netWorth">
-          <h2>Net Worth Overview</h2>
-          <p class="text" id="netWorth">$7,335.84</p>
-          <!--change to proper net worth calculation (no need to include investment for now or can get investment from investment spending category)-->
-        </div>
+      <div class="card" id="expense-summary">
+        <h2>Expense Summary</h2>
+        <p class="total-expense">$819.07</p>
+        <!--change to proper expense calculation(income vs expense then net revenue) and show pie chart; if clicked, it should change the breakdown. e.g. expenses is clicked -> show expenses breakdown and if income is clicked -> show income breakdown-->
+      </div>
 
-        <div class="card" id="expense-summary">
-          <h2>Expense Summary</h2>
-          <p class="total-expense">$819.07</p>
-          <!--change to proper expense calculation(income vs expense then net revenue) and show pie chart; if clicked, it should change the breakdown. e.g. expenses is clicked -> show expenses breakdown and if income is clicked -> show income breakdown-->
-        </div>
-
-        <div class="card" id="expense-breakdown">
+      <div class="card" id="expense-breakdown">
+        <div class="card-header">
           <h2>Expenses Breakdown</h2>
-          <div class="expense-category">Mortgage</div>
-          <div class="expense-category">Transportation</div>
-          <div class="expense-category">Food</div>
-          <div class="expense-category">Entertainment</div>
-          <div class="expense-category">Shopping</div>
-          <div class="expense-category">Education</div>
-          <div class="expense-category">Miscellaneous</div>
-        </div>
-        <div class="card" id="income-breakdown">
-          <h2>Income Breakdown</h2>
-          <div class="income-category">Salary</div>
-          <div class="income-category">Investments</div>
-          <div class="income-category">Side Hustle</div>
-          <div class="income-category">Other Income</div>
         </div>
 
-        <div class="card" id="expenses-over-time">
-          <h2>Expenses Over Time</h2>
-          <canvas id="lineChart"></canvas>
+
+        <div class="expense-category">
+          <img src="images/houseIcon.png" alt="houseIcon">
+          <div class="expense-details">
+            <h3>Mortgage</h3>
+            <div class="expense-bar">
+              <p>$1,200.00</p>
+            </div>
+          </div>
         </div>
 
-        <div class="card" id="monthly-goal">
-          <h2>Monthly Goal</h2>
-          <canvas id="goalChart"></canvas
-          ><!-- change it to proper one like wireframe; this will show the monthly goal progress, e.g. savings goal or expense limit -->
+        <div class="expense-category">
+          <img src="images/carIcon.png" alt="carIcon">
+          <div class="expense-details">
+            <h3>Transportation</h3>
+            <div class="expense-bar">
+              <p>$300.00</p>
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <!-- Chatbot Section -->
-      <div class="input-section">
-        <label for="user-input">Ask ChatGPT anything:</label>
-        <textarea
-          id="user-input"
-          placeholder="Type your question here..."
-        ></textarea>
 
-        <button id="send-btn" onclick="sendToChatGPT()">Send to ChatGPT</button>
-      </div>
+        <div class="expense-category">
+          <img src="images/foodIcon.png" alt="foodIcon">
+          <div class="expense-details">
+            <h3>Food</h3>
+            <div class="expense-bar">
+              <p>$450.00</p>
+            </div>
+          </div>
+        </div>
 
-      <!-- Response Section -->
-      <div class="response-section">
-        <label>ChatGPT Response:</label>
-        <div id="ai-response">
-          <div class="placeholder">
-            Your AI response will appear here after you send a message...
+        <div class="expense-category">
+          <img src="images/entertainmentIcon.png" alt="entertainmentIcon">
+          <div class="expense-details">
+            <h3>Entertainment</h3>
+            <div class="expense-bar">
+              <p>$150.00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="expense-category">
+          <img src="images/shoppingIcon.png" alt="shoppingIcon">
+          <div class="expense-details">
+            <h3>Shopping</h3>
+            <div class="expense-bar">
+              <p>$200.00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="expense-category">
+          <img src="images/educationIcon.png" alt="educationIcon">
+          <div class="expense-details">
+            <h3>Education</h3>
+            <div class="expense-bar">
+              <p>$100.00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="expense-category">
+          <img src="images/miscIcon.png" alt="miscIcon">
+          <div class="expense-details">
+            <h3>Miscellaneous</h3>
+            <div class="expense-bar">
+              <p>$75.00</p>
+            </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+    <!-- <div class="card" id="income-breakdown">
+        <h2>Income Breakdown</h2>
+        <div class="income-category">Salary</div>
+        <div class="income-category">Investments</div>
+        <div class="income-category">Side Hustle</div>
+        <div class="income-category">Other Income</div>
+      </div> -->
 
-    <script src="js/api.js"></script>
-  </body>
+    <div class="card" id="expenses-over-time">
+      <h2>Expenses Over Time</h2>
+      <canvas id="lineChart"></canvas>
+    </div>
+
+    <div class="card" id="monthly-goal">
+      <h2>Monthly Goal</h2>
+      <canvas
+        id="goalChart"></canvas><!-- change it to proper one like wireframe; this will show the monthly goal progress, e.g. savings goal or expense limit -->
+    </div>
+    </div>
+
+    <!-- Chatbot Section -->
+    <div class="input-section">
+      <label for="user-input">Ask ChatGPT anything:</label>
+      <textarea id="user-input" placeholder="Type your question here..."></textarea>
+
+      <button id="send-btn" onclick="sendToChatGPT()">Send to ChatGPT</button>
+    </div>
+
+    <!-- Response Section -->
+    <div class="response-section">
+      <label>ChatGPT Response:</label>
+      <div id="ai-response">
+        <div class="placeholder">
+          Your AI response will appear here after you send a message...
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+</body>
+
 </html>
